@@ -21,6 +21,7 @@ ios/.symlinks/
 ios/Flutter/
 ios/Podfile
 ios/Podfile.lock
+ios/Runner/GeneratedPluginRegistrant.*
 
 # ===== macOS =====
 macos/Pods/
