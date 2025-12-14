@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 import '../models/task.dart';
 import '../providers/task_provider.dart';
 
@@ -23,7 +24,20 @@ class TaskTile extends ConsumerWidget {
           decoration: task.isCompleted ? TextDecoration.lineThrough : null,
         ),
       ),
-      subtitle: task.description.isNotEmpty ? Text(task.description) : null,
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (task.description.isNotEmpty) Text(task.description),
+          if (task.dueDate != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 4.0),
+              child: Text(
+                'Due: ${DateFormat.yMMMd().format(task.dueDate!)}',
+                style: const TextStyle(fontSize: 12, color: Colors.grey),
+              ),
+            ),
+        ],
+      ),
       trailing: IconButton(
         icon: const Icon(Icons.delete),
         onPressed: () {

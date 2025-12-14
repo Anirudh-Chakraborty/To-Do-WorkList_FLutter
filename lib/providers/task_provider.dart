@@ -23,12 +23,17 @@ class TaskNotifier extends StateNotifier<List<Task>> {
     state = _hiveService.getTasks();
   }
 
-  Future<void> addTask(String title, String description) async {
+  Future<void> addTask(
+    String title,
+    String description,
+    DateTime? dueDate,
+  ) async {
     final task = Task(
       id: const Uuid().v4(),
       title: title,
       description: description,
       createdAt: DateTime.now(),
+      dueDate: dueDate,
     );
     await _hiveService.addTask(task);
     loadTasks();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'services/hive_service.dart';
-import 'screens/home_screen.dart';
+import 'screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,10 +20,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Todo WorkList',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 34, 3, 234),
+        ),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const SplashScreen(),
     );
   }
 }
