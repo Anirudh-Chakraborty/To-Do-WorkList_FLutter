@@ -22,6 +22,9 @@ class Task extends HiveObject {
   @HiveField(5)
   final DateTime? dueDate;
 
+  @HiveField(6)
+  String category;
+
   Task({
     required this.id,
     required this.title,
@@ -29,5 +32,6 @@ class Task extends HiveObject {
     this.isCompleted = false,
     required this.createdAt,
     this.dueDate,
+    this.category = 'Personal',
   });
 }

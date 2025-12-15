@@ -27,6 +27,7 @@ class TaskNotifier extends StateNotifier<List<Task>> {
     String title,
     String description,
     DateTime? dueDate,
+    String category,
   ) async {
     final task = Task(
       id: const Uuid().v4(),
@@ -34,6 +35,7 @@ class TaskNotifier extends StateNotifier<List<Task>> {
       description: description,
       createdAt: DateTime.now(),
       dueDate: dueDate,
+      category: category,
     );
     await _hiveService.addTask(task);
     loadTasks();
