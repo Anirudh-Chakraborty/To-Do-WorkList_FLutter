@@ -42,3 +42,18 @@ windows/flutter/ephemeral/
 
 # ===== Logs =====
 *.log
+
+# Flutter / Android build
+build/
+.android/
+android/.cxx/
+android/build/
+.gradle/
+
+# iOS / macOS
+ios/Pods/
+macos/Flutter/ephemeral/
+
+# Dart tool
+.dart_tool/
+
